@@ -13,8 +13,6 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	/* padding-left: 0.75rem;
-	padding-right: 0.75rem; */
 	padding-bottom: 2rem;
 	font-family: "Inter", sans-serif;
 	display: flex;
@@ -33,6 +31,29 @@ h1 {
 	font-weight: 800;
 	font-size: 2.75rem;
 	color: var(--very-dark-blue);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: var(--dark-grayish-blue);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+a:hover {
+	color: var(--soft-orange);
+}
+
+h4:hover {
+	cursor: pointer;
+	color: var(--soft-orange);
+}
+
+img {
+	z-index: -3;
 }
 
 :root {
@@ -79,6 +100,54 @@ h1 {
 	padding: 1.5rem;
 }
 
+.desktopMenu {
+	display: none;
+}
+
+#sideBarMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	font-weight: 500;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 80%;
+	height: 100%;
+	background-color: white;
+	outline: 1px solid black;
+	padding-left: 2em;
+	padding-top: 8em;
+	transform: translateX(100%);
+	transition: transform 1s ease;
+	box-shadow: 10px 5px 25px black;
+}
+
+#sideBarMenu a {
+	color: black;
+	font-size: 1.2em;
+}
+
+#closeButton {
+	position: absolute;
+	right: 1.3em;
+	top: 2em;
+	width: 2em;
+	height: 2em;
+}
+
+#opacityBody {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: black;
+	opacity: 0;
+	transition: opacity 1s ease;
+	z-index: -2;
+}
+
 /* Main section */
 
 #mainImage {
@@ -104,6 +173,12 @@ h1 {
 	letter-spacing: 0.25em;
 	font-weight: 500;
 	border: none;
+	transition: background-color 0.5s;
+}
+
+.readMoreButton:hover {
+	cursor: pointer;
+	background-color: var(--very-dark-blue);
 }
 
 /* Aside section */
@@ -140,6 +215,14 @@ h1 {
 
 .asideTitle {
 	font-size: 1.25em;
+	transform: translateY(0);
+	transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.asideTitle:hover {
+	cursor: pointer;
+	color: var(--soft-orange);
+	transform: translateY(-5%);
 }
 
 .asideDescription {
@@ -178,13 +261,9 @@ h1 {
 	font-size: 2em;
 }
 
-.ad3 {
-	margin-bottom: 2rem;
-}
-
 /* Footer section */
 
 footer {
-	margin-top: 3rem;
+	margin-top: 1rem;
 	padding: 1em;
 }
